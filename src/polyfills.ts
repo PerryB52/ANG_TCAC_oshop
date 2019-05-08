@@ -78,3 +78,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+
+ //added to resolve angular auth.js Uncaught ReferenceError: global is not defined // as per stackoverflow
+(window as any).global = window;
