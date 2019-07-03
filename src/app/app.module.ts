@@ -28,7 +28,8 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
-
+////br changes
+import { DataTableModule } from '@ismatjon/angular-data-table';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ProductService } from './product.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    DataTableModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
