@@ -30,6 +30,7 @@ import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 ////br changes
 import { DataTableModule } from '@ismatjon/angular-data-table';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DataTableModule } from '@ismatjon/angular-data-table';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,
