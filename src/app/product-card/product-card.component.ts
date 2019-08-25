@@ -10,21 +10,19 @@ import { ShoppingCartService } from '../shopping-cart.service';
 export class ProductCardComponent {
   @Input('product') product: Product;
   @Input('show-actions') showActions: true;
+  @Input('shopping-cart') shoppingCart;
 
   constructor(private cartService: ShoppingCartService) { }
 
   addToCart(product: Product) {
-    let cartId = localStorage.getItem('cartId');
+    this.cartService.addToCart(product)
+  }
 
-    if (!cartId) {
-      this.cartService.create().then(result => {
-        localStorage.setItem('cartId', result.key);
+  getQuantity() {
+    if (!this.shoppingCart) return 0;
 
-        //add product to cart
-      })
-    } else {
-      //add product to cart
-    }
+    let item = this.shoppingCart.items[this.product.$key]
+    return item ? item.quantity : 0;
   }
 
 }
